@@ -1,0 +1,19 @@
+.contact-us-section{
+    min-height: 150vh;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-us-banner{
+    background-image: url("../Images/contact.png");
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+}
+
+.contact-us-text h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(98, 98, 97);
+    margin-top: 10vh;
+}
+

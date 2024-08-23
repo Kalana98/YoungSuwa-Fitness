@@ -1,0 +1,36 @@
+.welcome{
+    margin-top: 100px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+}
+
+p{
+    margin-top: 40px;
+    color: rgb(123, 124, 124);
+}
+
+.benifitsTitle{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 60px;
+
+}
+
+.calculatorTitle{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 90px;
+}
+
+.welcomebtn{
+    margin-top: 20px;
+    background-color: rgb(108, 105, 105);
+    margin-top: 10px;
+    font-size: large;
+}
+
+.welcomebtn:hover{
+    background-color: rgb(34, 33, 33);
+    transition: 100ms;
+}

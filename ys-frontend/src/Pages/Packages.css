@@ -1,0 +1,12 @@
+.package-section{
+    align-items: center;
+    text-align: center;
+    min-height: 150vh;
+}
+
+.package-banner{
+    background-image: url("../Images/package.png");
+    background-position: center;
+    background-size: cover;
+    height: 80vh;
+}

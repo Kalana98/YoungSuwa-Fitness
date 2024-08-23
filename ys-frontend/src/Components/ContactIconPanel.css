@@ -1,0 +1,59 @@
+.contact-us {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: 5vh;
+  }
+  
+  .contact-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .contact-item {
+    flex: 1 1 22%;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .contact-item i {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-item h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .contact-item p {
+    font-size: 1.1rem;
+    color: #666;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .icon-red {
+    color: #d9534f;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .social-icon {
+    font-size: 25px;
+    color: #666;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  .social-icon:hover {
+    color: #d9534f;
+  }
+  

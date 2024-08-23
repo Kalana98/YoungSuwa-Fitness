@@ -1,0 +1,20 @@
+.map-container {
+  text-align: center;
+  margin: 5px auto;
+  max-width: 1000px;
+  margin-left: 10vh;
+}
+
+.map-container h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

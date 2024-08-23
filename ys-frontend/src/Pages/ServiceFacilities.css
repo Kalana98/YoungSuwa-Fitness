@@ -1,0 +1,10 @@
+.service-section{
+    min-height: 150vh;
+}
+
+.service-banner{
+    background-image: url("../Images/service.png");
+    background-position: center;
+    background-size: cover;
+    height: 80vh;
+}

@@ -1,0 +1,66 @@
+/* src/Components/CalculatorContainer.css */
+
+.calculator-container {
+    background-image: url("../Images/calgym.png");
+    margin-top: 80px;
+    padding: 20px 20px 20px 20px;
+    max-width: 1200px;
+    border-radius: 8px 8px 8px 8px ;
+  }
+  
+  .bmi-calculator,
+  .calorie-calculator {
+    padding: 20px;
+    background-color: #171717;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0.85;
+  }
+  
+  .bmi-calculator h2,
+  .calorie-calculator h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  .bmi-calculator label,
+  .calorie-calculator label {
+    display: block;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+  
+  .bmi-calculator input,
+  .calorie-calculator input,
+  .bmi-calculator select,
+  .calorie-calculator select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .bmi-calculator button,
+  .calorie-calculator button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(74, 73, 73);
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0.9;
+  }
+  
+  .bmi-calculator button:hover,
+  .calorie-calculator button:hover {
+    background-color: rgb(46, 46, 46);
+    transition: 100ms;
+  }
+  
+  .result {
+    margin-top: 20px;
+  }
+  

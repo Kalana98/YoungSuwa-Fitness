@@ -1,0 +1,25 @@
+.packages{
+    background-image: url("../Images/packages.jpg");
+    margin-top: 100px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.packages h1{
+    color: aliceblue;
+    
+}
+
+.packages button{
+    background-color: rgb(108, 105, 105);
+    opacity: 0.7;
+    margin-top: 10px;
+    font-size: large;
+}
+
+.packages button:hover{
+    background-color: rgb(56, 55, 55);
+    transition: 100ms;
+}
