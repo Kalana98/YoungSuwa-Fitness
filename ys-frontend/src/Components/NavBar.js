@@ -7,6 +7,9 @@ import './NavBar.css'; // Ensure this path is correct
 import { Link } from 'react-router-dom';
 
 const NavBar = () => {
+
+  const userRole = localStorage.getItem('userRole'); 
+
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-dark navbar-custom">
       <Container>
@@ -22,6 +25,8 @@ const NavBar = () => {
             <Nav.Link as={Link} to="/about">About Us &nbsp; |</Nav.Link>
             <Nav.Link as={Link} to="/contact">Contact Us &nbsp; |</Nav.Link>
             <Nav.Link as={Link} to="/adminpanel">Admin Panel</Nav.Link>
+            <Link to="/register">Register</Link>
+             {userRole === 'ADMIN' && <Link to="/admin">Admin Panel</Link>}
           </Nav>
         </Navbar.Collapse>
       </Container>
