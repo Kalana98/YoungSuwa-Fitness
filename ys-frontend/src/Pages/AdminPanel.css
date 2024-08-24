@@ -1,0 +1,32 @@
+.admin-panel-section{
+    min-height: 80vh;
+    align-items: center;
+    text-align: center;
+}
+
+.admin-panel-title h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 10vh;
+    font-size: 7vh;
+}
+
+.row{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.row .col-md-3 button{
+    height: 10vh;
+    width: 70%;
+    margin-top: 10vh;
+    margin-bottom: 7vh;
+    font-size: x-large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(66, 66, 66);
+}
+
+.row .col-md-3 button:hover{
+    background-color: black;
+    transition: 100ms;
+}

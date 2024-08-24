@@ -10,6 +10,7 @@ import Packages from './Pages/Packages';
 import UserRegistration from './Pages/UserRegistration';
 import Footer from './Components/Footer';
 import AdminPanel from './Pages/AdminPanel';
+
 function App() {
   return (
     <div className="App">
