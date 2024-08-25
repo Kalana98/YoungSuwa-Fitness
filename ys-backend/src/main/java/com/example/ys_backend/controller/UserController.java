@@ -1,6 +1,7 @@
 package com.example.ys_backend.controller;
 
 import com.example.ys_backend.model.PendingUser;
+import com.example.ys_backend.model.RegisteredUser;
 import com.example.ys_backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,11 @@ public class UserController {
     @GetMapping("/get-pending-users")
     public List<PendingUser> getAllPendingUsers(){
         return userService.getAllPendingUsers();
+    }
+
+    @GetMapping("/get-registered-users")
+    public List<RegisteredUser> getAllRegisteredUsers(){
+        return userService.getAllRegisteredUsers();
     }
 
     @PostMapping("/approve-user/{email}")

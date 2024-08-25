@@ -10,6 +10,8 @@ import Packages from './Pages/Packages';
 import UserRegistration from './Pages/UserRegistration';
 import Footer from './Components/Footer';
 import AdminPanel from './Pages/AdminPanel';
+import PendingUser from './Pages/PendingUser';
+import RegisteredUser from './Pages/RegisteredUser';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
           <Route path='/packages' element={<Packages/>} />
           <Route path='/register' element={<UserRegistration />} />
           <Route path='/adminpanel' element={<AdminPanel />} />
+          <Route path='/pending-user' element={<PendingUser />} />
+          <Route path='/registered-user' element={<RegisteredUser />} />
         </Routes>
         <Footer />
       </Router>

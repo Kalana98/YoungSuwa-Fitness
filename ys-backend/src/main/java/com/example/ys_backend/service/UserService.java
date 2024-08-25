@@ -22,7 +22,10 @@ public class UserService {
     public String registerUser(PendingUser pendingUser){
         if (pendingUserRepo.existsById(pendingUser.getEmail())){
             return "User is already in the pending list";
-        }else {
+        }else if(registeredUserRepo.existsById(pendingUser.getEmail())){
+            return "This user is already registered";
+        }
+        else {
             pendingUserRepo.save(pendingUser);
             return "User added to pending list";
         }
@@ -31,6 +34,11 @@ public class UserService {
     //get all pending users
     public List<PendingUser> getAllPendingUsers(){
         return pendingUserRepo.findAll();
+    }
+
+    //get all registered users
+    public List<RegisteredUser> getAllRegisteredUsers(){
+         return registeredUserRepo.findAll();
     }
 
     //admin approves user

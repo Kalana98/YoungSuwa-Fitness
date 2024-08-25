@@ -17,10 +17,7 @@ const Register = () => {
     e.preventDefault(); // Prevent the default form submission
 
     try {
-      // Use full backend URL for the API request
       const response = await axios.post('http://localhost:8080/api/v1/user/register', user);
-
-      // Show success message
       alert(response.data);
 
       // Optionally, reset the form after successful submission
