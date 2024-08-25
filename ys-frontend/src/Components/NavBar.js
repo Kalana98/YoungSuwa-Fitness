@@ -25,8 +25,7 @@ const NavBar = () => {
             <Nav.Link as={Link} to="/about">About Us &nbsp; |</Nav.Link>
             <Nav.Link as={Link} to="/contact">Contact Us &nbsp; |</Nav.Link>
             <Nav.Link as={Link} to="/adminpanel">Admin Panel</Nav.Link>
-            <Link to="/register">Register</Link>
-             {userRole === 'ADMIN' && <Link to="/admin">Admin Panel</Link>}
+            
           </Nav>
         </Navbar.Collapse>
       </Container>
