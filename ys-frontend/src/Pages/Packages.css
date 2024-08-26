@@ -10,3 +10,33 @@
     background-size: cover;
     height: 80vh;
 }
+
+.program-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .program-card {
+    background-color: #f7f7f7;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 250px;
+  }
+  
+  .program-card h2 {
+    margin-bottom: 10px;
+  }
+  
+  .program-card button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
