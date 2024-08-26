@@ -1,6 +1,6 @@
 package com.example.ys_backend.controller;
 
-import com.example.ys_backend.model.Programs;
+import com.example.ys_backend.model.Program;
 import com.example.ys_backend.service.ProgramService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -10,33 +10,28 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v1/programs")
 @CrossOrigin
-
 public class ProgramController {
 
     @Autowired
     ProgramService programService;
 
-    //create a new program
-    @PostMapping("/createProgram")
-    public String createProgram(@RequestBody Programs program){
-        return programService.createProgram(program);
+    @PostMapping("/saveProgram")
+    public String saveProgram(@RequestBody Program program){
+        return programService.saveProgram(program);
     }
 
-    //update a program
-    @PutMapping("/updateProgram/{programName}")
-    public String updateProgram(@PathVariable String programName, @RequestBody Programs updatedProgram){
-         return programService.updateProgram(programName, updatedProgram);
+    @PutMapping("/updateProgram")
+    public String updateProgram(@RequestBody Program program){
+        return programService.updateProgram(program);
     }
 
-    //get all programs
     @GetMapping("/getAllPrograms")
-    public List<Programs> getAllPrograms(){
-         return programService.getAllPrograms();
+    public List<Program> getAllPrograms(){
+        return programService.getAllPrograms();
     }
 
-    //delete a program
-    @DeleteMapping("/deleteProgram/{programName}")
-    public String deleteProgram (@PathVariable String programName){
-        return programService.deleteProgram(programName);
+    @DeleteMapping("/deleteProgram/{programID}")
+    public String deleteProgram (@PathVariable int programID){
+        return programService.deleteProgram(programID);
     }
 }

@@ -7,15 +7,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @Entity
-@Table(name = "program")
-
-public class Programs {
+@Table(name = "programs")
+public class Program {
 
     @Id
+    private int programID;
     private String programName;
     private String programDescription;
     private int duration;

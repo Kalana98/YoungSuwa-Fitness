@@ -51,7 +51,7 @@ const AdminPanel = () => {
       <div className="row">
 
           <div className="col-md-3">
-            <Link to="/manage-packages">
+            <Link to="/manage-programs">
                <button>Packages</button>
             </Link>
           </div>

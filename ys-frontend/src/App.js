@@ -12,6 +12,7 @@ import Footer from './Components/Footer';
 import AdminPanel from './Pages/AdminPanel';
 import PendingUser from './Pages/PendingUser';
 import RegisteredUser from './Pages/RegisteredUser';
+import ManagePrograms from './Pages/ManagePrograms';
 
 function App() {
   return (
@@ -29,7 +30,8 @@ function App() {
           <Route path='/adminpanel' element={<AdminPanel />} />
           <Route path='/pending-user' element={<PendingUser />} />
           <Route path='/registered-user' element={<RegisteredUser />} />
-        </Routes>
+          <Route path='/manage-programs' element={<ManagePrograms />} />
+         </Routes>
         <Footer />
       </Router>
     </div>
