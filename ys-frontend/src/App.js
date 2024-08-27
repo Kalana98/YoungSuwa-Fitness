@@ -13,6 +13,7 @@ import AdminPanel from './Pages/AdminPanel';
 import PendingUser from './Pages/PendingUser';
 import RegisteredUser from './Pages/RegisteredUser';
 import ManagePrograms from './Pages/ManagePrograms';
+import ManageService from './Pages/ManageService';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path='/pending-user' element={<PendingUser />} />
           <Route path='/registered-user' element={<RegisteredUser />} />
           <Route path='/manage-programs' element={<ManagePrograms />} />
+          <Route path='/manage-services-facilities' element={<ManageService />} />
          </Routes>
         <Footer />
       </Router>

@@ -1,5 +1,9 @@
-.program-section{
+.manage-service-section{
     min-height: 100vh;
     justify-content: center;
     text-align: center;
+}
+
+.service-table td{
+    cursor: pointer;
 }
