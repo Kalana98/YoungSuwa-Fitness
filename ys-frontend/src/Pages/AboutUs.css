@@ -1,17 +1,22 @@
 .about-us-section{
-    min-height: 150vh;
+    align-items: center;
     text-align: center;
+    min-height: 150vh;
+    padding: 20px;
+    background-color: #f4f4f9;
 }
 
 .about-us-banner{
     background-image: url("../Images/about3.png");
-    background-size: cover;
     background-position: center;
+    background-size: cover;
     height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
 }
 
 .about-us-text h1, p{

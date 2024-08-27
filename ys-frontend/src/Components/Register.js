@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import {Form, Button, Row, Col, Table} from 'react-bootstrap'
+import './Register.css'
 
 const Register = () => {
   const [user, setUser] = useState({
@@ -9,14 +12,26 @@ const Register = () => {
     address: '',
   });
 
+  const validateFields = () => {
+    const {name , email, contactNo, address} = user
+    if(!name.trim() || !email.trim() || !contactNo.trim() || !address.trim()){
+      alert("You should fill all the fields")
+      return false;
+    }else{
+      return true;
+    }
+  }
+
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent the default form submission
 
     try {
+      if (!validateFields()) return;
       const response = await axios.post('http://localhost:8080/api/v1/user/register', user);
       alert(response.data);
 
@@ -35,42 +50,47 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={user.name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={user.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="contactNo"
-          placeholder="Contact Number"
-          value={user.contactNo}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="address"
-          placeholder="Address"
-          value={user.address}
-          onChange={handleChange}
-          required
-        />
-        <button type="submit">Register</button>
-      </form>
+    <div className="register-com-section">
+      <Form className='mt-5'> 
+            <Row className='justify-content-center'>
+                <Col xs={12} md={6}>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Name</Form.Label>
+                        <Form.Control type="text" name="name" placeholder="name" value={user.name} onChange={handleChange} required />
+                    </Form.Group>
+                </Col>
+            </Row>
+
+            <Row className='justify-content-center'>
+                <Col xs={12} md={6}>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control type="email" name="email" placeholder="email" value={user.email} onChange={handleChange} required />
+                    </Form.Group>
+                </Col>
+            </Row>
+
+            <Row className='justify-content-center'>
+                <Col xs={12} md={6}>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Contact Number</Form.Label>
+                        <Form.Control type="text" name="contactNo" placeholder="contact number" value={user.contactNo} onChange={handleChange} required />
+                    </Form.Group>
+                </Col>
+            </Row>
+
+            <Row className='justify-content-center'>
+                <Col xs={12} md={6}>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Address</Form.Label>
+                        <Form.Control type="text" name="address" placeholder="address" value={user.address} onChange={handleChange} required />
+                    </Form.Group>
+                </Col>
+            </Row>
+
+            <Button variant="primary" onClick={handleSubmit}>Save</Button>
+      </Form>
+       
     </div>
   );
 };

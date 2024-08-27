@@ -43,5 +43,15 @@ public class UserController {
         return userService.rejectUser(email);
     }
 
+    @PutMapping("/updateRegisterUser")
+    public String updateRegUser(@RequestBody RegisteredUser registeredUser){
+        return userService.updateRegUser(registeredUser);
+    }
+
+    @DeleteMapping("/deleteRegUser/{email}")
+    public String deleteRegUser(@PathVariable String email){
+        return userService.deleteRegUser(email);
+    }
+
 
 }

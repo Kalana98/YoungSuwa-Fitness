@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './ManagePrograms.css'
 import axios from 'axios'
-import { useScroll } from 'framer-motion';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Form, Button, Row, Col, Table} from 'react-bootstrap'
 
@@ -17,6 +16,7 @@ const ManagePrograms = () => {
    const [description, setDescription] = useState(selectedProgram?.programDescription || "");
    const [proDuration, setProDuration] = useState(selectedProgram?.duration || "");
    const [proPrice, setProPrice] = useState(selectedProgram?.price || "");
+   
 
     
     useEffect(() => {
@@ -64,22 +64,33 @@ const ManagePrograms = () => {
     }
 
     const saveProgram = async () => {
-        try{
-            if(!validateFields()) return
+        if (!validateFields()) return;
+    
+        console.log({
+            programID: pID,
+            programName: name,
+            programDescription: description,
+            duration: proDuration,
+            price: proPrice
+        });
+    
+        try {
             await axios.post('http://localhost:8080/api/v1/programs/saveProgram', {
-                programID : pID,
-                programName : name,
-                programDescription : description,
-                duration : proDuration,
-                price : proPrice
+                programID: parseInt(pID), // Ensure programID is sent as a number
+                programName: name,
+                programDescription: description,
+                duration: parseInt(proDuration), // Ensure duration is sent as a number
+                price: parseFloat(proPrice) // Ensure price is sent as a float or number
             });
             alert("Program Saved Successfully");
             fetchAllPrograms();
             clearFields();
-        }catch(error){
-            alert("Error");
+        } catch (error) {
+            console.error("Error saving program: ", error.response || error.message);
+            alert("Error saving the program. Check console for details.");
         }
     }
+    
 
     const updateProgram = async () => {
         try{
@@ -100,8 +111,7 @@ const ManagePrograms = () => {
 
     const deleteProgram = async () => {
         try{
-            const id = parseInt(pID);
-            await axios.delete(`http://localhost:8080/api/v1/programs/deleteProgram/${id}`)
+            await axios.delete(`http://localhost:8080/api/v1/programs/deleteProgram/${pID}`)
             alert("Account Deleted")
             fetchAllPrograms();
             clearFields();
@@ -114,7 +124,7 @@ const ManagePrograms = () => {
 
 
   return (
-    <div>
+    <div className='program-section'>
       <h1>manage programs</h1>
       <Form className='mt-5'>
             <Row className='justify-content-center'>

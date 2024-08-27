@@ -1,7 +1,9 @@
 .contact-us-section{
-    min-height: 150vh;
     align-items: center;
     text-align: center;
+    min-height: 150vh;
+    padding: 20px;
+    background-color: #f4f4f9;
 }
 
 .contact-us-banner{
@@ -16,4 +18,5 @@
     color: rgb(98, 98, 97);
     margin-top: 10vh;
 }
+
 

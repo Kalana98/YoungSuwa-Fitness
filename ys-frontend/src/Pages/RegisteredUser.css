@@ -1,5 +1,7 @@
 .registered-user-section{
     min-height: 80vh;
+    justify-content: center;
+    text-align: center;
 }
 
 
@@ -22,6 +24,7 @@
   .registered-user-table td {
     word-wrap: break-word; /* Break long words if necessary */
     max-width: 200px; /* Set a max width for long text like emails */
+    cursor: pointer;
   }
   
   .registered-user-table .action-buttons button {

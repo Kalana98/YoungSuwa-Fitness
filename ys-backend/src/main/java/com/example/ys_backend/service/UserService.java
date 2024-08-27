@@ -64,4 +64,24 @@ public class UserService {
         pendingUserRepo.deleteById(email);
         return "User rejeccted and removed from pending list.";
     }
+
+    //update register user
+    public String updateRegUser(RegisteredUser registeredUser){
+        if (registeredUserRepo.existsById(registeredUser.getEmail())){
+            registeredUserRepo.save(registeredUser);
+            return "updated succesfully";
+        }else{
+            return "not found";
+        }
+    }
+
+    //Delete register
+    public String deleteRegUser(String email){
+        if (registeredUserRepo.existsById(email)){
+            registeredUserRepo.deleteById(email);
+            return "deleted";
+        }else{
+            return "not found";
+        }
+    }
 }
