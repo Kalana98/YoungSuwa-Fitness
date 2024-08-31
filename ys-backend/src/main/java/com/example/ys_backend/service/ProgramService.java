@@ -16,19 +16,19 @@ public class ProgramService {
     //save program
     public String saveProgram(Program program){
         if(programRepository.existsById(program.getProgramID())){
-            return "Program already posted";
+            return "Program already posted.";
         }else{
             programRepository.save(program);
-            return "saved Successfully";
+            return "Program saved Successfully.";
         }
     }
 
     public String updateProgram(Program program){
         if(programRepository.existsById(program.getProgramID())){
             programRepository.save(program);
-            return "updated";
+            return "Program updated successfully.";
         }else{
-            return "not found";
+            return "not found.";
         }
     }
 
@@ -39,9 +39,9 @@ public class ProgramService {
     public String deleteProgram(int programID){
         if(programRepository.existsById(programID)){
             programRepository.deleteById(programID);
-            return "deleted";
+            return "Program deleted successfully.";
         }else{
-            return "not found";
+            return "not found.";
         }
     }
 }

@@ -1,5 +1,34 @@
 .program-section{
     min-height: 100vh;
     justify-content: center;
+    align-items: center;
     text-align: center;
+    min-height: 150vh;
+    padding: 20px;
+    background-color: #f4f4f9;
 }
+
+.program-section h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.program-section Form{
+    margin-bottom: 10vh;
+}
+
+.program-section Form Button{
+    margin-top: 3vh;
+}
+
+.program-section th{
+    background-color: rgb(229, 228, 228);
+}
+
+.program-table{
+    margin-bottom: 10vh;
+}
+
+.program-table td{
+    cursor: pointer;
+}
+

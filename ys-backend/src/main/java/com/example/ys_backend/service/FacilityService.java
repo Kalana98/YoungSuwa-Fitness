@@ -16,22 +16,24 @@ public class FacilityService {
     //save facility
     public String saveFacility (Facility facility){
         if(facilityRepository.existsById(facility.getFacilityID())){
-            return "Already posted";
+            return "This faculty is already posted.";
         }else{
             facilityRepository.save(facility);
-            return "successfully saved";
+            return "Faculty successfully saved.";
         }
     }
 
     //update Facility
-    public String updateFacility (Facility facility){
+    public String updateFacility(Facility facility){
+        System.out.println("Updating Facility: " + facility); // Log the facility data
         if(facilityRepository.existsById(facility.getFacilityID())){
-            return "successfully updated";
-        }else{
             facilityRepository.save(facility);
-            return "not found";
+            return "Facility successfully updated.";
+        }else{
+            return "not found.";
         }
     }
+
 
     //get all
 
@@ -43,9 +45,9 @@ public class FacilityService {
     public String deleteFacility(int facilityID){
         if (facilityRepository.existsById(facilityID)){
             facilityRepository.deleteById(facilityID);
-            return "Deleted";
+            return "Faculty deleted successfully.";
         }else{
-            return "not found";
+            return "not found.";
         }
     }
 }

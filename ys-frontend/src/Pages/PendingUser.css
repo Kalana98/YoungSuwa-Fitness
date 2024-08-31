@@ -1,11 +1,23 @@
 .pending-user-section{
     min-height: 80vh;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+
+.pending-user-section h1{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 7vh;
+  margin-top: 7vh;
 }
 
 
 .pending-user-table {
     width: 100%; /* Ensure the table takes up the full width */
     border-collapse: collapse; /* Collapse borders */
+    margin-bottom: 10vh;
   }
   
   .pending-user-table th, .pending-user-table td {

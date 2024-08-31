@@ -2,8 +2,34 @@
     min-height: 100vh;
     justify-content: center;
     text-align: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+
+.manage-service-section h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 7vh;
+    margin-top: 7vh;
 }
 
 .service-table td{
     cursor: pointer;
 }
+
+.manage-service-section form Button{
+    margin-top: 3vh;
+    margin-bottom: 10vh;
+}
+.service-table{
+    
+}
+
+.service-table th{
+    background-color: rgb(229, 228, 228);;
+}
+
+.manage-service-section table{
+    margin-bottom: 10vh;
+}
+

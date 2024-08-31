@@ -3,6 +3,7 @@ import './ManagePrograms.css'
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Form, Button, Row, Col, Table} from 'react-bootstrap'
+import AdminPanelBtn from '../Components/AdminPanelBtn'
 
 
 
@@ -71,7 +72,7 @@ const ManagePrograms = () => {
             programName: name,
             programDescription: description,
             duration: proDuration,
-            price: proPrice
+            price: parseFloat(proPrice)
         });
     
         try {
@@ -125,13 +126,14 @@ const ManagePrograms = () => {
 
   return (
     <div className='program-section'>
-      <h1>manage programs</h1>
+        <AdminPanelBtn />
+      <h1>Package Management</h1>
       <Form className='mt-5'>
             <Row className='justify-content-center'>
                 <Col xs={12} md={6}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Program ID</Form.Label>
-                        <Form.Control type="text" placeholder="Auto Generated ID" value={pID} onChange={(e) => setPID(e.target.value)} />
+                        <Form.Control type="number" placeholder="Package Management : Program ID" value={pID} onChange={(e) => setPID(e.target.value)} />
                     </Form.Group>
                 </Col>
             </Row>
@@ -140,7 +142,7 @@ const ManagePrograms = () => {
                 <Col xs={12} md={6}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Program Name</Form.Label>
-                        <Form.Control type="text" placeholder="Enter your name here" value={name} onChange={(e) => setName(e.target.value)}/>
+                        <Form.Control type="text" placeholder="Package Management : Program Name" value={name} onChange={(e) => setName(e.target.value)}/>
                     </Form.Group>
                 </Col>
             </Row>
@@ -149,7 +151,7 @@ const ManagePrograms = () => {
                 <Col xs={12} md={6}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Program Description</Form.Label>
-                        <Form.Control type="text" placeholder="Enter your email here" value={description} onChange={(e) => setDescription(e.target.value)}/>
+                        <Form.Control type="text" placeholder="Package Management : Program Description" value={description} onChange={(e) => setDescription(e.target.value)}/>
                     </Form.Group>
                 </Col>
             </Row>
@@ -158,7 +160,7 @@ const ManagePrograms = () => {
                 <Col xs={12} md={6}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Program Duration</Form.Label>
-                        <Form.Control type="number" placeholder="Enter your address here" value={proDuration} onChange={(e) => setProDuration(e.target.value)}/>
+                        <Form.Control type="number" placeholder="Package Management : Program Duration" value={proDuration} onChange={(e) => setProDuration(e.target.value)}/>
                     </Form.Group>
                 </Col>
             </Row>
@@ -167,35 +169,41 @@ const ManagePrograms = () => {
                 <Col xs={12} md={6}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Program Price</Form.Label>
-                        <Form.Control type="text" placeholder="Enter your address here" value={proPrice} onChange={(e) => setProPrice(e.target.value)}/>
+                        <Form.Control type="text" placeholder="Package Management : Program Price" value={proPrice} onChange={(e) => setProPrice(e.target.value)}/>
                     </Form.Group>
                 </Col>
             </Row>
 
-            <Button variant="primary" onClick={saveProgram}>Save</Button>{' '}
+            <Button variant="success" onClick={saveProgram}>Save</Button>{' '}
             <Button variant="secondary" onClick={updateProgram}>Update</Button>{' '}
-            <Button variant="success" onClick={deleteProgram}>Delete</Button>{' '}
+            <Button variant="danger" onClick={deleteProgram}>Delete</Button>{' '}
         </Form>    
-        <Table className='mt-5 mb-5'>
+        <Table className='program-table'>
             <thead>
                 <tr>
                     <th>Program ID</th>
                     <th>Program Name</th>
                     <th>Program Description</th>
-                    <th>Program Duration</th>
-                    <th>Program Price</th>
+                    <th>Program Duration (Days)</th>
+                    <th>Program Price (Rs)</th>
                 </tr>
             </thead>
             <tbody>
-                {programs.map(pg => (
+                {programs.length > 0 ? (
+                 programs.map(pg => (
                     <tr key={pg.programID} onClick={() => selectProgram(pg)}>
                         <td>{pg.programID}</td>
                         <td>{pg.programName}</td>
                         <td>{pg.programDescription}</td>
                         <td>{pg.duration}</td>
-                        <td>{pg.price}</td>
+                        <td>{parseFloat(pg.price).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })} /-</td>
                     </tr>
-                ))}
+                ))) : (
+                    <tr>
+                        <td colSpan={5}>No any programs to show in this table</td>
+                    </tr>
+                )
+            }
             </tbody>
         </Table>
         

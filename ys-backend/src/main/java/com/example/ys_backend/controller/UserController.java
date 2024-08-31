@@ -53,5 +53,9 @@ public class UserController {
         return userService.deleteRegUser(email);
     }
 
+    @GetMapping("/pending-users/count")
+    public long getPendingUserCount(){
+        return userService.countPendingUsers();
+    }
 
 }
