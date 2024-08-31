@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import './Packages.css'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Button} from 'react-bootstrap'
 
 
 
@@ -22,6 +24,10 @@ const Packages = () => {
         }
     };
 
+    const formatPrice = (price) => {
+      return price.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+  };
+
   return (
     <div className='package-section'>
       <div className="package-banner">
@@ -33,9 +39,9 @@ const Packages = () => {
           <h2>{pg.programName}</h2>
           <p>{pg.programDescription}</p>
           <p>{pg.duration} days</p>
-          <p className="program-price">RS.{pg.price}/=</p>
+          <p className="program-price">RS.{formatPrice(pg.price)}/=</p> {/* Use formatPrice function */}
           <Link to="/register">
-            <button className="join-button">Join Us</button>
+            <Button variant="success" className="join-Button">Join Us</Button>
           </Link>
         </div>
       ))}

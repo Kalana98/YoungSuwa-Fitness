@@ -1,3 +1,45 @@
 .register-section{
-    min-height: 90vh;
+  align-items: center;
+  text-align: center;
+  min-height: 160vh;
+  padding: 20px;
+  background-color: #f4f4f9;
+}
+
+.register-section .register-banner{
+    background-image: url("../Images/registation.png");
+    background-size: cover;
+    height: 80vh;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.register-section .register-content{
+    margin-top: 10vh;
+    background-color: rgb(18, 18, 18);
+    padding-top: 1vh;
+    padding-bottom: 5vh;
+    margin-left: 60vh;
+    margin-right: 60vh;
+    border-radius: 2vh;
+    margin-bottom: 10vh;
+    
+}
+.register-section .register-content h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #f4f4f9;
+    margin-bottom: 4vh;
+}
+
+.register-section .register-content label{
+    color: #f4f4f9;
+}
+
+.register-section .register-content button{
+    margin-top: 2vh;
 }

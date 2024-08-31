@@ -3,6 +3,7 @@ import './RegisteredUser.css'
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Form, Button, Row, Col, Table} from 'react-bootstrap'
+import AdminPanelBtn from '../Components/AdminPanelBtn';
 
 const RegisteredUser = () => {
 
@@ -75,12 +76,14 @@ const RegisteredUser = () => {
 
   return (
     <div className='registered-user-section'>
+        <AdminPanelBtn />
+        <h1>Registered User Management</h1>
         <Form className='mt-5'>
             <Row className='justify-content-center'>
                 <Col xs={12} md={6}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" placeholder="Email" value={regEmail} onChange={(e) => setRegEmail(e.target.value)} />
+                        <Form.Control type="email" placeholder="Registered User Management : Email" value={regEmail} onChange={(e) => setRegEmail(e.target.value)} />
                     </Form.Group>
                 </Col>
             </Row>
@@ -89,7 +92,7 @@ const RegisteredUser = () => {
                 <Col xs={12} md={6}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Name</Form.Label>
-                        <Form.Control type="text" placeholder="Enter your name here" value={regName} onChange={(e) => setRegName(e.target.value)}/>
+                        <Form.Control type="text" placeholder="Registered User Management : Name" value={regName} onChange={(e) => setRegName(e.target.value)}/>
                     </Form.Group>
                 </Col>
             </Row>
@@ -98,7 +101,7 @@ const RegisteredUser = () => {
                 <Col xs={12} md={6}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Contact Number</Form.Label>
-                        <Form.Control type="text" placeholder="Enter your email here" value={regContactNo} onChange={(e) => setRegContactNo(e.target.value)}/>
+                        <Form.Control type="number" placeholder="Registered User Management : Contact Number" value={regContactNo} onChange={(e) => setRegContactNo(e.target.value)}/>
                     </Form.Group>
                 </Col>
             </Row>
@@ -107,13 +110,13 @@ const RegisteredUser = () => {
                 <Col xs={12} md={6}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Address</Form.Label>
-                        <Form.Control type="text" placeholder="Enter your address here" value={regAddress} onChange={(e) => setRegAddress(e.target.value)}/>
+                        <Form.Control type="text" placeholder="Registered User Management : Address" value={regAddress} onChange={(e) => setRegAddress(e.target.value)}/>
                     </Form.Group>
                 </Col>
             </Row>
 
-            <Button variant="secondary" onClick={updateRegUser}>Update</Button>{' '}
-            <Button variant="success" onClick={deleteRegUser}>Delete</Button>{' '}
+            <Button variant="success" onClick={updateRegUser}>Update</Button>{' '}
+            <Button variant="danger" onClick={deleteRegUser}>Delete</Button>{' '}
             
         </Form>    
       <Table className="registered-user-table">
@@ -123,7 +126,6 @@ const RegisteredUser = () => {
                 <th>Email</th>
                 <th>Contact Number</th>
                 <th>Address</th>
-                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -134,9 +136,7 @@ const RegisteredUser = () => {
                         <td>{rUser.email}</td>
                         <td>{rUser.contactNo}</td>
                         <td>{rUser.address}</td>
-                        <td>
-                        
-                        </td>
+                    
                     </tr>
                 ))
             ) : (

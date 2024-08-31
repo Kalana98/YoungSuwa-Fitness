@@ -6,25 +6,6 @@ import axios from 'axios';
 
 const AdminPanel = () => {
 
-  const [pendingUsers, setPendingUsers] = useState([]);
-
-  useEffect(() => {
-    axios.get('/api/v1/admin/pending-users')
-      .then((res) => setPendingUsers(res.data))
-      .catch((err) => console.log(err));
-  }, []);
-
-  const approveUser = (email) => {
-    axios.post(`/api/v1/admin/approve-user/${email}`)
-      .then((res) => alert(res.data))
-      .catch((err) => console.log(err));
-  };
-
-  const rejectUser = (email) => {
-    axios.delete(`/api/v1/admin/reject-user/${email}`)
-      .then((res) => alert(res.data))
-      .catch((err) => console.log(err));
-  };
   return (
     <div className='admin-panel-section'>
       

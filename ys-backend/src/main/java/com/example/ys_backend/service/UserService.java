@@ -65,11 +65,16 @@ public class UserService {
         return "User rejeccted and removed from pending list.";
     }
 
+    //counting pending users
+    public long countPendingUsers(){
+        return pendingUserRepo.count();
+    }
+
     //update register user
     public String updateRegUser(RegisteredUser registeredUser){
         if (registeredUserRepo.existsById(registeredUser.getEmail())){
             registeredUserRepo.save(registeredUser);
-            return "updated succesfully";
+            return "User updated successfully.";
         }else{
             return "not found";
         }
@@ -79,7 +84,7 @@ public class UserService {
     public String deleteRegUser(String email){
         if (registeredUserRepo.existsById(email)){
             registeredUserRepo.deleteById(email);
-            return "deleted";
+            return "User deletetd successfully";
         }else{
             return "not found";
         }

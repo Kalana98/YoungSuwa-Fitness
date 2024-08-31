@@ -1,6 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import './PendingUser.css';
+import AdminPanelBtn from '../Components/AdminPanelBtn';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import {Form, Button, Row, Col, Table} from 'react-bootstrap'
 
 const PendingUser = () => {
 
@@ -45,7 +48,8 @@ const PendingUser = () => {
 
   return (
     <div className='pending-user-section'>
-        <h1>Pending user table</h1>
+        <AdminPanelBtn />
+        <h1>Pending User Management</h1>
         <table className='pending-user-table'>
             <thead>
                 <tr>
@@ -65,8 +69,8 @@ const PendingUser = () => {
                                 <td>{user.contactNo}</td>
                                 <td>{user.address}</td>
                                 <td>
-                                    <button onClick={() => approveUser(user.email)}>Approve</button> {""}
-                                    <button onClick={() => rejectUser(user.email)}>Reject</button>
+                                    <Button  variant="success" onClick={() => approveUser(user.email)}>Approve</Button> {""}
+                                    <Button variant="danger" onClick={() => rejectUser(user.email)}>Reject</Button>
                                 </td>
                             </tr>
                         ))

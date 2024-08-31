@@ -6,8 +6,13 @@ import './UserRegistration.css';
 const UserRegistration = () => {
   return (
     <div className='register-section'>
-      <h1>This is Registration page</h1>
-      <Register />
+      <div className="register-banner">
+
+      </div>
+      <div className="register-content">
+        <Register />
+      </div>
+      
     </div>
   )
 }

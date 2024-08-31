@@ -2,12 +2,27 @@
     min-height: 80vh;
     justify-content: center;
     text-align: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f9;
 }
 
+.registered-user-section h1{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.registered-user-section form{
+  margin-bottom: 10vh;
+}
+
+.registered-user-section form Button{
+  margin-top: 3vh;
+}
 
 .registered-user-table {
     width: 100%; /* Ensure the table takes up the full width */
     border-collapse: collapse; /* Collapse borders */
+    margin-bottom: 10vh;
   }
   
   .registered-user-table th, .registered-user-table td {

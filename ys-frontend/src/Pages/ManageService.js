@@ -3,6 +3,7 @@ import './ManageService.css'
 import axios from 'axios'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Form, Button, Row, Col, Table} from 'react-bootstrap'
+import AdminPanelBtn from '../Components/AdminPanelBtn'
 
 const ManageService = () => {
 
@@ -14,9 +15,7 @@ const ManageService = () => {
     const [faciDes, setFaciDes] = useState(selectedServices?.facilityDescription || "");
     const [charCount, setCharCount] = useState(0);
 
-    const selectFacility = (facility) => {
-        setSelectedServices(facility);
-    }
+  
 
     useEffect(() => {
         setFaciID(selectedServices?.facilityID || "");
@@ -33,13 +32,17 @@ const ManageService = () => {
     }
 
     const validateFields = () => {
-        if(!faciID.trim() || !faciTitle.trim() || !faciDes.trim()){
+        if(!String(faciID).trim() || !faciTitle.trim() || !faciDes.trim()){
             alert("You should fill this all fields");
             return false;
         }else{
             return true;
         }
     }
+
+    useEffect(() => {
+        fetchAllFacilities();
+    }, []);
 
     const fetchAllFacilities = async () => {
         try{
@@ -50,13 +53,16 @@ const ManageService = () => {
         }
     }
 
-    useEffect(() => {
-        fetchAllFacilities();
-    }, []);
+  
 
+   
+
+      const selectFacility = (facility) => {
+        setSelectedServices(facility);
+    }
     const saveFacility = async () => {
         try{
-            if(!validateFields()) return
+            if(!validateFields()) return;
             const response = await axios.post('http://localhost:8080/api/v1/facilities/saveFacility', {
                 facilityID : faciID,
                 facilityTitle : faciTitle,
@@ -71,20 +77,32 @@ const ManageService = () => {
     }
 
     const updateFacility = async () => {
-        try{
-            if(!validateFields) return
-            const response = await axios.put('http://localhost:8080/api/v1/facilities/updateFacility', {
-                facilityID : faciID,
-                facilityTitle : faciTitle,
-                facilityDescription : faciDes
+        try {
+            if (!validateFields()) return;
+    
+            // Log data before sending it to the backend
+            console.log('Updating facility with data:', {
+                facilityID: faciID,
+                facilityTitle: faciTitle,
+                facilityDescription: faciDes
             });
+    
+            const response = await axios.put('http://localhost:8080/api/v1/facilities/updateFacility', {
+                facilityID: faciID,
+                facilityTitle: faciTitle,
+                facilityDescription: faciDes
+            });
+    
             alert(response.data);
             fetchAllFacilities();
             clearFields();
-        }catch(error){
-            console.log(error);
+        } catch (error) {
+            console.log('Error updating facility:', error);
         }
-    }
+    };
+    
+    
+    
 
     const deleteFacility = async () => {
         try{
@@ -105,7 +123,8 @@ const ManageService = () => {
 
   return (
     <div className='manage-service-section'>
-      <h1>hi</h1>
+        <AdminPanelBtn />
+      <h1>Service & Facilities Management</h1>
         
 
       <Form className='mt-5'>
@@ -113,7 +132,7 @@ const ManageService = () => {
                 <Col xs={12} md={6}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Facility ID</Form.Label>
-                        <Form.Control type="text" placeholder="Auto Generated ID" value={faciID} onChange={(e) => setFaciID(e.target.value)} />
+                        <Form.Control type="number" placeholder="Service & Facilities Management : Facility ID" value={faciID} onChange={(e) => setFaciID(e.target.value)} />
                     </Form.Group>
                 </Col>
             </Row>
@@ -122,7 +141,7 @@ const ManageService = () => {
                 <Col xs={12} md={6}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Facility Title</Form.Label>
-                        <Form.Control type="text" placeholder="Enter your name here" value={faciTitle} onChange={(e) => setFaciTitle(e.target.value)}/>
+                        <Form.Control type="text" placeholder="Service & Facilities Management : Facility Title" value={faciTitle} onChange={(e) => setFaciTitle(e.target.value)}/>
                     </Form.Group>
                 </Col>
             </Row>
@@ -131,7 +150,7 @@ const ManageService = () => {
                 <Col xs={12} md={6}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Facility Description</Form.Label>
-                        <Form.Control type="text" placeholder="Enter your email here" maxLength={255} value={faciDes} onChange={handleDescriptionChange}/>
+                        <Form.Control type="text" placeholder="Service & Facilities Management : Facility Description" maxLength={255} value={faciDes} onChange={handleDescriptionChange}/>
                         <div className="char-counter">{charCount}/255 characters</div> {/* Character counter */}
                     </Form.Group>
                 </Col>
@@ -139,9 +158,9 @@ const ManageService = () => {
 
             
 
-            <Button variant="primary" onClick={saveFacility}>Save</Button>{' '}
+            <Button variant="success" onClick={saveFacility}>Save</Button>{' '}
             <Button variant="secondary" onClick={updateFacility}>Update</Button>{' '}
-            <Button variant="success" onClick={deleteFacility}>Delete</Button>{' '}
+            <Button variant="danger" onClick={deleteFacility}>Delete</Button>{' '}
         </Form>    
 
         <Table className="service-table">
@@ -153,13 +172,19 @@ const ManageService = () => {
                 </tr>
             </thead>
             <tbody>
-            {services.map(sf => (
+            {services.length > 0 ? (
+             services.map(sf => (
                     <tr key={sf.facilityID} onClick={() => selectFacility(sf)}>
                         <td>{sf.facilityID}</td>
                         <td>{sf.facilityTitle}</td>
                         <td>{sf.facilityDescription}</td>
                     </tr>
-                ))}
+                ))) : (
+                    <tr>
+                        <td colSpan={3}>No any services & facility to show in this table</td>
+                    </tr>
+                )
+            }
             </tbody>
         </Table>
         

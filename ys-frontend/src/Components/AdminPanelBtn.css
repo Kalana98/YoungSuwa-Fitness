@@ -1,0 +1,25 @@
+.admin-panel-btn-section .row {
+    margin-top: 7vh;
+    margin-bottom: 7vh;
+}
+
+.admin-panel-btn-section .row button {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color:rgb(78, 78, 78); /* default button background */
+    color: black; /* default button text color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: aliceblue;
+}
+
+
+.admin-panel-btn-section .row button:hover {
+    background-color: black;
+    color: white; /* white text color on hover */
+}
+
+.admin-panel-btn-section .row .active-button button {
+    background-color: black;
+    color: white; /* white text color on active */
+}
