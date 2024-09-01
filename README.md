@@ -63,7 +63,7 @@ To get started with the YoungSuwa Fitness project, follow these steps:
 
 **User Interface**
 
-  - ** Sign Up**: Users can sign up by filling in their name, email, contact number, and address.
+  - **Sign Up**: Users can sign up by filling in their name, email, contact number, and address.
   - **Packages**: Users can view available packages in a card layout format.
   - **Services & Facilities**: Users can view the available services and facilities provided by the gym.
   - **Contact Us**: Users can reach out to the gym via the contact page.
