@@ -20,11 +20,11 @@ YoungSuwa Fitness is a web-based application designed to streamline the manageme
 
 ## Features
 
-- **User Registration**: Users can sign up for the gym by providing their personal details. Admins can approve or reject user registrations.
-- **Package Management**: Admins can create, update, delete, and view fitness packages.
-- **Service & Facilities Management**: Admins can manage the various services and facilities offered by the gym.
-- **Contact Us**: Users can contact the fitness center for inquiries or assistance.
-- **Admin Panel**: A dedicated admin panel for managing users, packages, and facilities.
+- **User Registration** : Users can sign up for the gym by providing their personal details. Admins can approve or reject user registrations.
+- **Package Management** : Admins can create, update, delete, and view fitness packages.
+- **Service & Facilities Management** : Admins can manage the various services and facilities offered by the gym.
+- **Contact Us** : Users can contact the fitness center for inquiries or assistance.
+- **Admin Panel** : A dedicated admin panel for managing users, packages, and facilities.
 
 ## Installation
 
@@ -63,17 +63,17 @@ To get started with the YoungSuwa Fitness project, follow these steps:
 
 **User Interface**
 
-  - **Sign Up**: Users can sign up by filling in their name, email, contact number, and address.
-  - **Packages**: Users can view available packages in a card layout format.
-  - **Services & Facilities**: Users can view the available services and facilities provided by the gym.
-  - **Contact Us**: Users can reach out to the gym via the contact page.
+  - **Sign Up** : Users can sign up by filling in their name, email, contact number, and address.
+  - **Packages** : Users can view available packages in a card layout format.
+  - **Services & Facilities** : Users can view the available services and facilities provided by the gym.
+  - **Contact Us** : Users can reach out to the gym via the contact page.
 
 **Admin Interface**
 
-  - **Pending Users**: View, approve, or reject user registrations.
-  - **Registered Users**: View and manage registered users.
-  - **Packages**: Manage fitness packages, including creating, updating, and deleting packages.
-  - **Services & Facilities**: Manage services and facilities, including creating, updating, and deleting entries.
+  - **Pending Users** : View, approve, or reject user registrations.
+  - **Registered Users** : View and manage registered users.
+  - **Packages** : Manage fitness packages, including creating, updating, and deleting packages.
+  - **Services & Facilities** : Manage services and facilities, including creating, updating, and deleting entries.
 
 ## Screenshots
 
@@ -135,10 +135,10 @@ Here are some screenshots of the YoungSuwa Fitness interface:
 
 ## Technologies Used
 
-- **Frontend**: React (or another framework if specified)
-- **Backend**: Spring Boot (Java)
-- **Database**: MySQL (or another database if specified)
-- **Styling**: CSS, Bootstrap
+- **Frontend** : React (or another framework if specified)
+- **Backend** : Spring Boot (Java)
+- **Database** : MySQL (or another database if specified)
+- **Styling** : CSS, Bootstrap
      
 ## Contributing
 
