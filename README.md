@@ -133,14 +133,14 @@ Here are some screenshots of the YoungSuwa Fitness interface:
   ![Screenshot 2024-09-01 164005](https://github.com/user-attachments/assets/45bd1fab-bcd9-48b4-a82d-69bd61d2bfa4)
   
 
-##Technologies Used
+## Technologies Used
 
 - **Frontend**: React (or another framework if specified)
 - **Backend**: Spring Boot (Java)
 - **Database**: MySQL (or another database if specified)
 - **Styling**: CSS, Bootstrap
      
-##Contributing
+## Contributing
 
 Contributions are welcome! Please fork this repository and submit a pull request for any enhancements, bug fixes, or new features.     
 
